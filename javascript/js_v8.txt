@@ -1,0 +1,77 @@
+To run js code, we need runtime environment. 
+Lly, Javascript has Javascript runtime environment (a container with all the features to run piece of js code).
+Eg:
+1. Browsers.
+    - The first one was created by Bryndon Iyk working at Netscape popularly known as Spider Monkey right now. Edge has Chakra and NodejS has v8 same as chrome, deno, etc.
+2.NodeJS is an opensource runtimatte environment.
+
+So, Bryndon Iyk took the challenge : a problem: To write a new language (became Javascript) and thus he needed an environemt to run it (browsers: now, Spider monkey). He is a genius. But, Google geniused him.
+
+They created v8. Problem statement same. 
+
+Basic Architecture of FIRST JS Engine...
+
+FIRST Spider Monkey - 
+CODE --> PARSING --> COMPILE --> EXECUTE
+
+PARSING 
+1. var a = 10;
+tokenize; for saving in memory
+
+2. Generate AST - Abstaract SYntax tree - Use tree data structure.. astexporer.net
+
+COMPILE
+
+ WHAT IS Interpreted (RUN LINE BY LINE) - BRYNDON IYK - FAST
+
+// NETSCAPE   (HTML/ CSS /JS WAS BORN)  
+
+// MODERN BROWSERS (DYNAMIC WEB)
+// JIT COMPILATION 
+
+KEEP INTERPRETER MODE ON... PUT A PARALLEL COMPILE MODE.. OPTIMISE AND EXECUTE AS MUCH AS WE CAN. JUST IN TIME
+
+DIFFERENT BROWSERS ARE DIFFERENT BCZ OF THIS PROBLEM: PARALLEL COMPILE MODE.
+
+// V8 - CACHING, INLINING, COPY ILLISION TECHNIQUES.
+
+EXECUTE
+// MEMORY HEAPS <-> CALL STACK (EXECUTION CONTEXT) --> GARBAGE COLLECTION --> MARK & SWEEP GOOGLE
+
+V8
+ IGNITE INTERPRETTER
+ TURBO FAN COMPILER
+
+MEMORY HEAP -
+GLOBAL EXECUTION CONTEXT - INIT
+VAR A = 10;
+VAR B = FUNCTION(NM) {
+    VAR K = NUM*NUM;
+    RETURN K;
+}
+B();
+
+// CREATION PHASE --> EXECUTION PHASE
+MEMORY                      CODE
+A: UNDEFINED
+                            SECOND CONTEXT B() CALL; finished return to same place in GC
+B:FUNCTION(NM) {
+    VAR K = NUM*NUM;
+    RETURN K;
+}
+
+same is pushed in stack and it executes
+
+// there was no way to achieve asynch behaviour. event loop is born with web apis (powers; they are not js programs ...webapis and exposed to call stack through set Timeout(timer))
+
+
+ghadi chaiye time napne ke liye - timer - settimeout
+server se connect ke liye - fetch lib
+console etc
+
+// MEMORY MANAGEMENT
+// GARBAGE COLLECTION
+
+// EVENT loop - MICRO TASK QUEUE (HIHG PRIORITY) - TASK QUEUE - STARVATION ISSUE
+
+

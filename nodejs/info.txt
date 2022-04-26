@@ -1,0 +1,25 @@
+NODEJS
+---------
+
+node -v
+
+Use NVM for switching node versions
+    - nvm ls
+    - nvm install 10.x.x
+    - nvm use 10.x.x
+
+DEFINITION
+
+1. Runtime environment which can be leveraged for writing backend application
+3. No concept of window (browser).
+4. Used commonJs module system. Now, es6 module system.
+
+GLOBALS
+
+1. REPL - type node in cmd and then REPL - 
+        process.exit() - process -> Lly, we have (require - commonJs) -> Lly, (module: module.exports) -> Lly, (global) ( global.test = 2) -> Lly, (__dirname)
+
+MODULES
+
+1. Separate namespace - standalone directory with their own variables (resolve global variable name conflicts).
+2. 3 types - INTERNAL OR LOCAL/ SHIPPED (nodejs - fs)/ EXTERNAL (from github/online sources)
